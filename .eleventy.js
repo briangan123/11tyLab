@@ -122,7 +122,7 @@ module.exports = function(eleventyConfig) {
     // You can also pass this in on the command line using `--pathprefix`
 
     // Optional (default is shown)
-    pathPrefix: "11tyLab/",
+    pathPrefix: "/11tyLab/",
     // -----------------------------------------------------------------
 
     // These are all optional (defaults are shown):
@@ -130,7 +130,7 @@ module.exports = function(eleventyConfig) {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site/_eleventy_redirect"
+      output: "_site"
     }
   };
 };
