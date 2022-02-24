@@ -1,0 +1,102 @@
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Building a basic web component with Open-wc.</title>
+      <meta name="description" content="This is a post on My Blog about open-WC.">
+      <link rel="stylesheet" href="/11tyLab/css/index.css">
+      <link rel="stylesheet" href="/11tyLab/css/prism-base16-monokai.dark.css">
+      <link rel="alternate" href="/11tyLab/feed/feed.xml" type="application/atom+xml" title="Group B&#39;s World">
+      <link rel="alternate" href="/11tyLab/feed/feed.json" type="application/json" title="Group B&#39;s World">
+    </head>
+    <body>
+      <header>
+        <h1 class="home"><a href="/11tyLab/">Group B&#39;s World</a></h1>
+        <ul class="nav">
+          <li class="nav-item"><a href="/11tyLab/">Home</a></li>
+          <li class="nav-item"><a href="/11tyLab/posts/">Archive</a></li>
+          <li class="nav-item"><a href="/11tyLab/about/">About Me</a></li>
+        </ul>
+      </header>
+
+      <main class="tmpl-post">
+
+        <h1>Building a basic web component with Open-wc.</h1>
+
+<time datetime="2022-01-18">18 Jan 2022</time><a href="/11tyLab/tags/open-wc/" class="post-tag">open-wc</a>
+
+<p>Hi, my name is Brian Gan and this is my first time coding in JavaScript. In this tutorial, I am going to show you how to build a basic web component using open-wc. If I was able to accomplish this, then so can you!</p>
+<h2 id="what-to-install" tabindex="-1"><strong>What to install</strong> <a class="direct-link" href="#what-to-install" aria-hidden="true">#</a></h2>
+<p><strong>VSCode</strong><br>
+First, you'll need to install <a href="https://code.visualstudio.com/download">VSCode</a> for your respective operating system. This is where you'll write most of your Javascript code for your web component.</p>
+<p><strong>NodeJS</strong><br>
+Next, you'll need to install <a href="https://nodejs.org/en/">NodeJS LTS</a>. This is a runtime environment for developing your application and provides a library that will make developing web applications simple. Make sure you are downloading the Long-term support (LTS) version so that you won't have any critical bugs that haven't been discovered yet. You can learn more about NodeJS [here] (<a href="https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm">https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm</a>).</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/isncdq4yuhq5wc14syx7.PNG" alt="Image description"></p>
+<p><strong>npm</strong><br>
+This is a package manager that comes preinstalled along with NodeJS. npm puts modules in one place so that NodeJS can find them and also helps manage dependencies so that you won't have to download them manually.</p>
+<p>You can check to see if NodeJS installed npm by typing <code>npm -v</code> in the command line. This will show you what version you have. If it doesn't recognize the command, then you will need to manually install npm by typing <code>npm install -g npm</code>. You can learn more about npm [here] (<a href="https://docs.npmjs.com/cli/v6/commands/npm">https://docs.npmjs.com/cli/v6/commands/npm</a>).</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yt1to8b8gzhubwd7vhpn.PNG" alt="Image description"></p>
+<p>NodeJS and npm are popular among developers because it is based on JavaScript, which has been the most popular web development coding language. NodeJS is easy to learn, scalable, cross-platform friendly, light &amp; fast, and takes advantage of caching. You can learn more about the origins and why it is so popular [here] (<a href="https://www.section.io/engineering-education/why-node-js-is-popular/">https://www.section.io/engineering-education/why-node-js-is-popular/</a>).</p>
+<p><strong>Yarn</strong><br>
+Yarn is similar to npm and is another package manager that is optional for this tutorial. You can also check to see if you have yarn installed with the command <code>yarn -v</code>.</p>
+<h2 id="creating-a-place-for-all-of-your-projects" tabindex="-1"><strong>Creating a place for all of your projects</strong> <a class="direct-link" href="#creating-a-place-for-all-of-your-projects" aria-hidden="true">#</a></h2>
+<p>Now, you'll want to create a directory so that you can store all of your projects. This can be done through the command line or through the GUI. For this project, my files are stored in my <code>Documents/git/edtechjoker/</code> directory, but you can name it whatever you'd like. This can be done through the command line by typing <code>mkdir -p ~/Documents/git/edtechjoker</code> on most operating systems. For reference, I am using a Windows 10 machine and I created my directory by using the GUI.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dh7893fobw33vi3ugoxp.PNG" alt="Image description"></p>
+<h2 id="version-control-using-github" tabindex="-1"><strong>Version Control using GitHub</strong> <a class="direct-link" href="#version-control-using-github" aria-hidden="true">#</a></h2>
+<p>If you would like to use GitHub for version control, then make sure to clone your repo into the newly created folder.</p>
+<ol>
+<li>In your command line, navigate to the newly created directory by using the cd command. In my case, this would be <code>\Users\brian\Documents\git\edtechjoker\</code></li>
+</ol>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0o9hd8vet685zos53tj5.PNG" alt="Image description"><br>
+2. Create a new repo on GitHub. I named my repo <code>edtechjoker-lab1</code>.<br>
+3. Clone your repo by running <code>git clone git@github.com:YOURUSERNAME/YOURREPO.git</code>.<br>
+Make sure to replace your username and the name of your repo.</p>
+<h2 id="getting-connected-to-open-wc" tabindex="-1"><strong>Getting connected to Open-wc</strong> <a class="direct-link" href="#getting-connected-to-open-wc" aria-hidden="true">#</a></h2>
+<p>Now that we have everything installed, we can begin to connect to Open-wc.</p>
+<ol>
+<li>In your command line, navigate to the newly created directory. If you want to keep track of version with GitHub, make sure you're in the repo folder. In my case, that would be <code>\Users\brian\Documents\git\edtechjoker\edtechjoker-lab1</code>.</li>
+<li>Use the command <code>npm init @open-wc</code>. You Should see something like this:</li>
+</ol>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ktb8pyvr3yazaomj7t3s.PNG" alt="Image description"><br>
+3. Initialize your project with the following settings: (Hint: you must use your arrow keys to navigate through the different settings)</p>
+<ul>
+<li>New project scaffold</li>
+<li>Web Component</li>
+<li>Linting, Testing, and Demoing all enabled.</li>
+<li>No TypeScript</li>
+<li>Name it &quot;hello-world&quot; --You can name it whatever you'd like.</li>
+<li>Install depencies using yarn -- if you were unable to install yarn, you can use npm instead.</li>
+</ul>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xy1ihpb4ra1h58zb1apz.PNG" alt="Image description"></p>
+<p>Congratulations! You have successfully created a web component using Open-wc. You can view your site by going into the new folder. In my case, hello-world. Then use the command <code>npm run start</code> or <code>npm start</code> or if you installed yarn, <code>yarn start</code>.<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pa0x78cuc5qyz1deajro.PNG" alt="Image description"><br>
+If successful, it should open a new window/tab displaying your web component.<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yoqqwem7dttb50fd0z7g.PNG" alt="Image description"><br>
+To exit, press [control] + c</p>
+<h2 id="tweaking-your-code" tabindex="-1"><strong>Tweaking your code</strong> <a class="direct-link" href="#tweaking-your-code" aria-hidden="true">#</a></h2>
+<p>This is where VSCode comes into play. Now that you have your basic web component, you can go to VSCode and open up the project folder. In my case, this is called hello-world. If you navigate to the src folder, you will see a JavaScript file. You can play around with this file to see how it changes your web component.<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/086pc7xfueixyl2smewx.png" alt="Image description"><br>
+If you are using version control, make sure to commit and push your changes to your online repository. For example, after finishing up my changes, in my command line, I would make sure I'm in my hello-world directory (the one created using open-wc) and use the following commands:</p>
+<ol>
+<li><code>git commit -am &quot;YOUR MESSAGE HERE&quot;</code></li>
+<li><code>git push origin main</code></li>
+<li>If prompted, you may need to enter your passphrase.</li>
+</ol>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z40ic9hx9in16digpu2l.PNG" alt="Image description"></p>
+<p>Now if you go to your GitHub repo, you'll see the changes in your code.</p>
+<p>This is my <a href="https://github.com/briangan123/edtechjoker-lab1">GitHub repo</a> for this project.</p>
+<p>If you want to practice and learn more about different web components and how to integrate them into your code, I suggest you check out [Lit's tutorial] (<a href="https://lit.dev/tutorial/">https://lit.dev/tutorial/</a>) and play around with it.</p>
+<p>Good luck and have fun building!</p>
+
+<hr>
+<ul><li>Next: <a href="/11tyLab/posts/secondpost/">The back end of connecting to APIs.</a></li><li>Previous: <a href="/11tyLab/posts/fourthpost/">This is my fourth post.</a></li>
+</ul>
+
+      </main>
+
+      <footer></footer>
+
+      <!-- Current page: /11tyLab/posts/firstpost/ -->
+    </body>
+  </html>

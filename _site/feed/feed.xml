@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Group B&#39;s World</title>
+	<subtitle>Here are the blog posts.</subtitle>
+	
+	<link href="https://groupb11ty/11tyLab/feed/feed.xml" rel="self"/>
+	<link href="https://GroupB11ty"/>
+	<updated>2022-02-03T00:00:00Z</updated>
+	<id>https://example.com/</id>
+	<author>
+		<name>Your Name Here</name>
+		<email>youremailaddress@example.com</email>
+	</author>
+	
+	<entry>
+		<title>The back end of connecting to APIs.</title>
+		<link href="https://groupb11ty/11tyLab/posts/secondpost/"/>
+		<updated>2022-02-03T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/secondpost/</id>
+		<content type="html">&lt;p&gt;In this blog post, I&#39;ll be discussing the backend of how websites connect to APIs to visualize its data.&lt;/p&gt;
+&lt;h2 id=&quot;geoip&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;GeoIP&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/secondpost/#geoip&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;GeoIP is a free API that can retrieve your IP address data and other location information from your Internet Service Provider(ISP). You can view your location information using GeoIP &lt;a href=&quot;https://freegeoip.app/json/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;getting-data-from-geoip-into-google-maps&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Getting data from GEOIP into Google Maps&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/secondpost/#getting-data-from-geoip-into-google-maps&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First, in our constructor, we set the location endpoint to the GeoIP API. We refer to this API when trying to fetch its data.&lt;br /&gt;
+&lt;code&gt;this.locationEndpoint = &#39;https://freegeoip.app/json/&#39;;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Next, We instantiate variables we want to retrieve. In this case, we instantiated our longitude, latitude, city, and region_name (AKA State).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vveb1jjbypz42jerfqdl.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Then, we will fetch data from the API by using this code block:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iimzbgv604z2um9vkjxi.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fetch()&lt;/strong&gt;&lt;br /&gt;
+In this function, we connect to the API and if successful, it will retrieve the data you specified. If not, it returns false and won&#39;t display any information from the API. This is also called a promise. This takes the URL as a parameter.&lt;/p&gt;
+&lt;p&gt;Now that we retrieved our longitude and latitude from the API and have it stored into a local variable, we can reference it in our render() function. Whenever a variable in the properties() is updated, this function is run again to obtain the updated information.&lt;/p&gt;
+&lt;p&gt;In the render() function, we declared a new variable, which will be the Google Maps link. Instead of setting a defined longitude and latitude in the url, we input the local variables, &lt;code&gt;this.long&lt;/code&gt; &amp;amp; &lt;code&gt;this.lat&lt;/code&gt; instead, so that it can update by itself.&lt;br /&gt;
+Then, we created an iframe where a map of your location will be displayed in a little box on your website.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nebbfq37yhpl9719c5el.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We can also create a hyperlink that you can click on to direct you straight to the google maps website that already has your coordinates automatically inputted. This is done in a similar fashion as the iframe, but with a different syntax. In this case, we used an href and set it equal to the Google Maps link with the local variables for latitude and longitude. We have a static zoom level set to 14 at the end of the href link. Then you can set the hyperlink to say whatever you&#39;d like. In this case, it says &amp;quot;Open in Google Maps&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qggwzkr1mmys5ucbjtg1.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;wiring-data-into-wikipedia-query-tag&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Wiring data into wikipedia-query tag&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/secondpost/#wiring-data-into-wikipedia-query-tag&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now that you successfully retrieved your location data from the GeoIP API, you can use   that to imbed a wikipedia article about your location.&lt;/p&gt;
+&lt;p&gt;First, you&#39;ll need to add it as a dependency by importing it with this at the top:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;import &#39;@lrnwebcomponents/wikipedia-query/wikipedia-query.js&#39;;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To automatically show the information about your city and state from Wikipedia, you need to use the wikipedia-query search tag and reference the local city and state variables that were instantiated and set earlier.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pojx8nmjumbhi88ksj45.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now you have successfully wired the GeoIP API data to Google Maps and Wikipedia!&lt;/p&gt;
+&lt;p&gt;You can check out my repo &lt;a href=&quot;https://github.com/briangan123/ip-project/blob/master/src/LocationFromIP.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out these resources for more information.&lt;br /&gt;
+&lt;a href=&quot;https://freegeoip.app/json/&quot;&gt;GeoIP API&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://en.wikipedia.org/w/api.php&quot;&gt;Wiki API Documentation&lt;/a&gt;&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Building a basic web component with Open-wc.</title>
+		<link href="https://groupb11ty/11tyLab/posts/firstpost/"/>
+		<updated>2022-01-18T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/firstpost/</id>
+		<content type="html">&lt;p&gt;Hi, my name is Brian Gan and this is my first time coding in JavaScript. In this tutorial, I am going to show you how to build a basic web component using open-wc. If I was able to accomplish this, then so can you!&lt;/p&gt;
+&lt;h2 id=&quot;what-to-install&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;What to install&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/firstpost/#what-to-install&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;VSCode&lt;/strong&gt;&lt;br /&gt;
+First, you&#39;ll need to install &lt;a href=&quot;https://code.visualstudio.com/download&quot;&gt;VSCode&lt;/a&gt; for your respective operating system. This is where you&#39;ll write most of your Javascript code for your web component.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;br /&gt;
+Next, you&#39;ll need to install &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS LTS&lt;/a&gt;. This is a runtime environment for developing your application and provides a library that will make developing web applications simple. Make sure you are downloading the Long-term support (LTS) version so that you won&#39;t have any critical bugs that haven&#39;t been discovered yet. You can learn more about NodeJS [here] (&lt;a href=&quot;https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm&quot;&gt;https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/isncdq4yuhq5wc14syx7.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;br /&gt;
+This is a package manager that comes preinstalled along with NodeJS. npm puts modules in one place so that NodeJS can find them and also helps manage dependencies so that you won&#39;t have to download them manually.&lt;/p&gt;
+&lt;p&gt;You can check to see if NodeJS installed npm by typing &lt;code&gt;npm -v&lt;/code&gt; in the command line. This will show you what version you have. If it doesn&#39;t recognize the command, then you will need to manually install npm by typing &lt;code&gt;npm install -g npm&lt;/code&gt;. You can learn more about npm [here] (&lt;a href=&quot;https://docs.npmjs.com/cli/v6/commands/npm&quot;&gt;https://docs.npmjs.com/cli/v6/commands/npm&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yt1to8b8gzhubwd7vhpn.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;NodeJS and npm are popular among developers because it is based on JavaScript, which has been the most popular web development coding language. NodeJS is easy to learn, scalable, cross-platform friendly, light &amp;amp; fast, and takes advantage of caching. You can learn more about the origins and why it is so popular [here] (&lt;a href=&quot;https://www.section.io/engineering-education/why-node-js-is-popular/&quot;&gt;https://www.section.io/engineering-education/why-node-js-is-popular/&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yarn&lt;/strong&gt;&lt;br /&gt;
+Yarn is similar to npm and is another package manager that is optional for this tutorial. You can also check to see if you have yarn installed with the command &lt;code&gt;yarn -v&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;creating-a-place-for-all-of-your-projects&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Creating a place for all of your projects&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/firstpost/#creating-a-place-for-all-of-your-projects&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now, you&#39;ll want to create a directory so that you can store all of your projects. This can be done through the command line or through the GUI. For this project, my files are stored in my &lt;code&gt;Documents/git/edtechjoker/&lt;/code&gt; directory, but you can name it whatever you&#39;d like. This can be done through the command line by typing &lt;code&gt;mkdir -p ~/Documents/git/edtechjoker&lt;/code&gt; on most operating systems. For reference, I am using a Windows 10 machine and I created my directory by using the GUI.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dh7893fobw33vi3ugoxp.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;version-control-using-github&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Version Control using GitHub&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/firstpost/#version-control-using-github&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you would like to use GitHub for version control, then make sure to clone your repo into the newly created folder.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In your command line, navigate to the newly created directory by using the cd command. In my case, this would be &lt;code&gt;\Users\brian\Documents\git\edtechjoker\&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0o9hd8vet685zos53tj5.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+2. Create a new repo on GitHub. I named my repo &lt;code&gt;edtechjoker-lab1&lt;/code&gt;.&lt;br /&gt;
+3. Clone your repo by running &lt;code&gt;git clone git@github.com:YOURUSERNAME/YOURREPO.git&lt;/code&gt;.&lt;br /&gt;
+Make sure to replace your username and the name of your repo.&lt;/p&gt;
+&lt;h2 id=&quot;getting-connected-to-open-wc&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Getting connected to Open-wc&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/firstpost/#getting-connected-to-open-wc&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now that we have everything installed, we can begin to connect to Open-wc.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In your command line, navigate to the newly created directory. If you want to keep track of version with GitHub, make sure you&#39;re in the repo folder. In my case, that would be &lt;code&gt;\Users\brian\Documents\git\edtechjoker\edtechjoker-lab1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Use the command &lt;code&gt;npm init @open-wc&lt;/code&gt;. You Should see something like this:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ktb8pyvr3yazaomj7t3s.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+3. Initialize your project with the following settings: (Hint: you must use your arrow keys to navigate through the different settings)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New project scaffold&lt;/li&gt;
+&lt;li&gt;Web Component&lt;/li&gt;
+&lt;li&gt;Linting, Testing, and Demoing all enabled.&lt;/li&gt;
+&lt;li&gt;No TypeScript&lt;/li&gt;
+&lt;li&gt;Name it &amp;quot;hello-world&amp;quot; --You can name it whatever you&#39;d like.&lt;/li&gt;
+&lt;li&gt;Install depencies using yarn -- if you were unable to install yarn, you can use npm instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xy1ihpb4ra1h58zb1apz.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Congratulations! You have successfully created a web component using Open-wc. You can view your site by going into the new folder. In my case, hello-world. Then use the command &lt;code&gt;npm run start&lt;/code&gt; or &lt;code&gt;npm start&lt;/code&gt; or if you installed yarn, &lt;code&gt;yarn start&lt;/code&gt;.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pa0x78cuc5qyz1deajro.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+If successful, it should open a new window/tab displaying your web component.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yoqqwem7dttb50fd0z7g.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+To exit, press [control] + c&lt;/p&gt;
+&lt;h2 id=&quot;tweaking-your-code&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Tweaking your code&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/firstpost/#tweaking-your-code&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is where VSCode comes into play. Now that you have your basic web component, you can go to VSCode and open up the project folder. In my case, this is called hello-world. If you navigate to the src folder, you will see a JavaScript file. You can play around with this file to see how it changes your web component.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/086pc7xfueixyl2smewx.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+If you are using version control, make sure to commit and push your changes to your online repository. For example, after finishing up my changes, in my command line, I would make sure I&#39;m in my hello-world directory (the one created using open-wc) and use the following commands:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git commit -am &amp;quot;YOUR MESSAGE HERE&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin main&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If prompted, you may need to enter your passphrase.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z40ic9hx9in16digpu2l.PNG&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now if you go to your GitHub repo, you&#39;ll see the changes in your code.&lt;/p&gt;
+&lt;p&gt;This is my &lt;a href=&quot;https://github.com/briangan123/edtechjoker-lab1&quot;&gt;GitHub repo&lt;/a&gt; for this project.&lt;/p&gt;
+&lt;p&gt;If you want to practice and learn more about different web components and how to integrate them into your code, I suggest you check out [Lit&#39;s tutorial] (&lt;a href=&quot;https://lit.dev/tutorial/&quot;&gt;https://lit.dev/tutorial/&lt;/a&gt;) and play around with it.&lt;/p&gt;
+&lt;p&gt;Good luck and have fun building!&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>This is my fourth post.</title>
+		<link href="https://groupb11ty/11tyLab/posts/fourthpost/"/>
+		<updated>2018-09-30T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/fourthpost/</id>
+		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/fourthpost/#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>This is my third post.</title>
+		<link href="https://groupb11ty/11tyLab/posts/thirdpost/"/>
+		<updated>2018-08-24T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/thirdpost/</id>
+		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;ins class=&quot;highlight-line highlight-line-add&quot;&gt;	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/ins&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;del class=&quot;highlight-line highlight-line-remove&quot;&gt;	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/del&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
+&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+</content>
+	</entry>
+</feed>

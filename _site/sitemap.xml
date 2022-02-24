@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/posts/thirdpost/</loc>
+    <lastmod>2018-08-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/posts/fourthpost/</loc>
+    <lastmod>2018-09-30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/posts/firstpost/</loc>
+    <lastmod>2022-01-18</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/posts/secondpost/</loc>
+    <lastmod>2022-02-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/about/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/posts/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/page-list/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/api/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/open-wc/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/second-tag/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/posts-with-two-tags/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+</urlset>

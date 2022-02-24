@@ -1,0 +1,69 @@
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>The back end of connecting to APIs.</title>
+      <meta name="description" content="This is a post on connecting to APIs.">
+      <link rel="stylesheet" href="/11tyLab/css/index.css">
+      <link rel="stylesheet" href="/11tyLab/css/prism-base16-monokai.dark.css">
+      <link rel="alternate" href="/11tyLab/feed/feed.xml" type="application/atom+xml" title="Group B&#39;s World">
+      <link rel="alternate" href="/11tyLab/feed/feed.json" type="application/json" title="Group B&#39;s World">
+    </head>
+    <body>
+      <header>
+        <h1 class="home"><a href="/11tyLab/">Group B&#39;s World</a></h1>
+        <ul class="nav">
+          <li class="nav-item"><a href="/11tyLab/">Home</a></li>
+          <li class="nav-item"><a href="/11tyLab/posts/">Archive</a></li>
+          <li class="nav-item"><a href="/11tyLab/about/">About Me</a></li>
+        </ul>
+      </header>
+
+      <main class="tmpl-post">
+
+        <h1>The back end of connecting to APIs.</h1>
+
+<time datetime="2022-02-03">03 Feb 2022</time><a href="/11tyLab/tags/api/" class="post-tag">API</a>
+
+<p>In this blog post, I'll be discussing the backend of how websites connect to APIs to visualize its data.</p>
+<h2 id="geoip" tabindex="-1"><strong>GeoIP</strong> <a class="direct-link" href="#geoip" aria-hidden="true">#</a></h2>
+<p>GeoIP is a free API that can retrieve your IP address data and other location information from your Internet Service Provider(ISP). You can view your location information using GeoIP <a href="https://freegeoip.app/json/">here</a>.</p>
+<h2 id="getting-data-from-geoip-into-google-maps" tabindex="-1"><strong>Getting data from GEOIP into Google Maps</strong> <a class="direct-link" href="#getting-data-from-geoip-into-google-maps" aria-hidden="true">#</a></h2>
+<p>First, in our constructor, we set the location endpoint to the GeoIP API. We refer to this API when trying to fetch its data.<br>
+<code>this.locationEndpoint = 'https://freegeoip.app/json/';</code></p>
+<p>Next, We instantiate variables we want to retrieve. In this case, we instantiated our longitude, latitude, city, and region_name (AKA State).</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vveb1jjbypz42jerfqdl.png" alt="Image description"></p>
+<p>Then, we will fetch data from the API by using this code block:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iimzbgv604z2um9vkjxi.PNG" alt="Image description"></p>
+<p><strong>Fetch()</strong><br>
+In this function, we connect to the API and if successful, it will retrieve the data you specified. If not, it returns false and won't display any information from the API. This is also called a promise. This takes the URL as a parameter.</p>
+<p>Now that we retrieved our longitude and latitude from the API and have it stored into a local variable, we can reference it in our render() function. Whenever a variable in the properties() is updated, this function is run again to obtain the updated information.</p>
+<p>In the render() function, we declared a new variable, which will be the Google Maps link. Instead of setting a defined longitude and latitude in the url, we input the local variables, <code>this.long</code> &amp; <code>this.lat</code> instead, so that it can update by itself.<br>
+Then, we created an iframe where a map of your location will be displayed in a little box on your website.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nebbfq37yhpl9719c5el.png" alt="Image description"></p>
+<p>We can also create a hyperlink that you can click on to direct you straight to the google maps website that already has your coordinates automatically inputted. This is done in a similar fashion as the iframe, but with a different syntax. In this case, we used an href and set it equal to the Google Maps link with the local variables for latitude and longitude. We have a static zoom level set to 14 at the end of the href link. Then you can set the hyperlink to say whatever you'd like. In this case, it says &quot;Open in Google Maps&quot;.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qggwzkr1mmys5ucbjtg1.png" alt="Image description"></p>
+<h2 id="wiring-data-into-wikipedia-query-tag" tabindex="-1"><strong>Wiring data into wikipedia-query tag</strong> <a class="direct-link" href="#wiring-data-into-wikipedia-query-tag" aria-hidden="true">#</a></h2>
+<p>Now that you successfully retrieved your location data from the GeoIP API, you can use   that to imbed a wikipedia article about your location.</p>
+<p>First, you'll need to add it as a dependency by importing it with this at the top:</p>
+<p><code>import '@lrnwebcomponents/wikipedia-query/wikipedia-query.js';</code></p>
+<p>To automatically show the information about your city and state from Wikipedia, you need to use the wikipedia-query search tag and reference the local city and state variables that were instantiated and set earlier.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pojx8nmjumbhi88ksj45.png" alt="Image description"></p>
+<p>Now you have successfully wired the GeoIP API data to Google Maps and Wikipedia!</p>
+<p>You can check out my repo <a href="https://github.com/briangan123/ip-project/blob/master/src/LocationFromIP.js">here</a>.</p>
+<p>Check out these resources for more information.<br>
+<a href="https://freegeoip.app/json/">GeoIP API</a><br>
+<a href="https://en.wikipedia.org/w/api.php">Wiki API Documentation</a></p>
+
+<hr>
+<ul><li>Previous: <a href="/11tyLab/posts/firstpost/">Building a basic web component with Open-wc.</a></li>
+</ul>
+
+      </main>
+
+      <footer></footer>
+
+      <!-- Current page: /11tyLab/posts/secondpost/ -->
+    </body>
+  </html>
