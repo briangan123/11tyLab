@@ -47,17 +47,17 @@
   </url>
   
   <url>
-    <loc>https://groupb11ty/11tyLab/tags/api/</loc>
-    <lastmod>2022-02-22</lastmod>
-  </url>
-  
-  <url>
     <loc>https://groupb11ty/11tyLab/tags/open-wc/</loc>
     <lastmod>2022-02-22</lastmod>
   </url>
   
   <url>
     <loc>https://groupb11ty/11tyLab/tags/second-tag/</loc>
+    <lastmod>2022-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://groupb11ty/11tyLab/tags/api/</loc>
     <lastmod>2022-02-22</lastmod>
   </url>
   
