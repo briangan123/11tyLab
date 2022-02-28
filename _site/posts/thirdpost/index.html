@@ -3,8 +3,8 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>This is my third post.</title>
-      <meta name="description" content="This is a post on My Blog about win-win survival strategies.">
+      <title>Getting started with 11ty</title>
+      <meta name="description" content="This is a post on dev.to.">
       <link rel="stylesheet" href="/11tyLab/css/index.css">
       <link rel="stylesheet" href="/11tyLab/css/prism-base16-monokai.dark.css">
       <link rel="alternate" href="/11tyLab/feed/feed.xml" type="application/atom+xml" title="Group B&#39;s World">
@@ -22,18 +22,39 @@
 
       <main class="tmpl-post">
 
-        <h1>This is my third post.</h1>
+        <h1>Getting started with 11ty</h1>
 
-<time datetime="2018-08-24">24 Aug 2018</time><a href="/11tyLab/tags/second-tag/" class="post-tag">second tag</a><a href="/11tyLab/tags/posts-with-two-tags/" class="post-tag">posts with two tags</a>
+<time datetime="2022-02-27">27 Feb 2022</time>
 
-<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// this is a command</span></span><br><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">myCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><ins class="highlight-line highlight-line-add">	<span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></ins><br><span class="highlight-line"></span><br><del class="highlight-line highlight-line-remove">	counter<span class="token operator">++</span><span class="token punctuation">;</span></del><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Test with a line break above this line.</span></span><br><span class="highlight-line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Test'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
-<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-<h2 id="section-header" tabindex="-1">Section Header <a class="direct-link" href="#section-header" aria-hidden="true">#</a></h2>
-<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+<p>11ty is a simple static site generator that uses the files found in the current working directory. You can use many different filetypes such as markdown, html, JavaScript, etc. There are many different ways to go about creating your first 11ty site.</p>
+<h2 id="basic-11ty-site" tabindex="-1"><strong>Basic 11ty Site</strong> <a class="direct-link" href="#basic-11ty-site" aria-hidden="true">#</a></h2>
+<p>To easily get started with 11ty, go to your command line and in the directory you want, run this command:</p>
+<pre><code>echo '# Page header' &gt; README.md
+npx @11ty/eleventy
+</code></pre>
+<p>This will create a blank site in the current directory. To start up the web server, you can run this command: <code>npx @11ty/eleventy --serve</code>. After that, you can open <code>http://localhost:8080/README/</code> in your web browser to see your local page. You can edit its contents in a code editing program such as VSCode. Then you'll want to create a .eleventy.js file so that you can configure Eleventy to your site's needs. You can edit the files in the directory such as the <a href="http://readme.md">readme.md</a> and index.html. Here is what my basic site looks like:<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aiqavveawofjd2br0cr0.png" alt="Image description"><br>
+You can view my GitHub code [here].(<a href="https://github.com/briangan123/11ty">https://github.com/briangan123/11ty</a>)</p>
+<h2 id="11ty-blog-template" tabindex="-1"><strong>11ty Blog Template</strong> <a class="direct-link" href="#11ty-blog-template" aria-hidden="true">#</a></h2>
+<p>Another way to utilize 11ty is by using prebuilt templates. For this example, I used <a href="https://github.com/11ty/eleventy-base-blog">this</a> template from GitHub. To use this as a template, click the green button that says &quot;use this template&quot;. It will prompt you to create a repo name and then you can create your own version. <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9qe41ss9jvtratdpdhmv.png" alt="Image description"><br>
+After you created your template on GitHub, you can use your command line to keep track of changes so that you can upload it to GitHub. Again, you can edit the contents by changing some files in VSCode. Here is what my blog looks like:</p>
+<p>Homepage<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3jj5o3n1g6qduhxa48rs.png" alt="Image description"><br>
+Archive page<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n072znuwh3y695apxat7.png" alt="Image description"><br>
+First Blog Post<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixdtrvn5qwf7sujmwu4j.png" alt="Image description"><br>
+You can push your changes to GitHub to keep track of changes to your files as you add more to your site. Here is my Github <a href="https://github.com/briangan123/11tyLab">repo</a>.</p>
+<h2 id="another-template" tabindex="-1"><strong>Another Template</strong> <a class="direct-link" href="#another-template" aria-hidden="true">#</a></h2>
+<p>Another template I used was <a href="https://github.com/trey/resume-template">this</a>.<br>
+Following the same procedures to use the template, I created my own resume site and edited the files and page content to fit my needs. Here is what it looks like:<br>
+<img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/otqay0x4z7cfhr9pag0y.png" alt="Image description"><br>
+You can see the edits I made in my GitHub repo <a href="https://github.com/briangan123/resume11ty">here</a>.</p>
+<h2 id="conclusion" tabindex="-1"><strong>Conclusion</strong> <a class="direct-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>11ty is a powerful tool to create a static site and there are many ways to go about it. Using a template will get you up and running faster, but if you want full customizability, then you can build your site from the ground up.</p>
 
 <hr>
-<ul><li>Next: <a href="/11tyLab/posts/fourthpost/">This is my fourth post.</a></li>
+<ul><li>Previous: <a href="/11tyLab/posts/fourthpost/">Getting started with Docker</a></li>
 </ul>
 
       </main>

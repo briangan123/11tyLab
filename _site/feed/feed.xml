@@ -5,12 +5,86 @@
 	
 	<link href="https://groupb11ty/11tyLab/feed/feed.xml" rel="self"/>
 	<link href="https://GroupB11ty"/>
-	<updated>2022-02-03T00:00:00Z</updated>
+	<updated>2022-02-27T00:00:00Z</updated>
 	<id>https://example.com/</id>
 	<author>
 		<name>Your Name Here</name>
 		<email>youremailaddress@example.com</email>
 	</author>
+	
+	<entry>
+		<title>Getting started with 11ty</title>
+		<link href="https://groupb11ty/11tyLab/posts/thirdpost/"/>
+		<updated>2022-02-27T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/thirdpost/</id>
+		<content type="html">&lt;p&gt;11ty is a simple static site generator that uses the files found in the current working directory. You can use many different filetypes such as markdown, html, JavaScript, etc. There are many different ways to go about creating your first 11ty site.&lt;/p&gt;
+&lt;h2 id=&quot;basic-11ty-site&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Basic 11ty Site&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#basic-11ty-site&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To easily get started with 11ty, go to your command line and in the directory you want, run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;# Page header&#39; &amp;gt; README.md
+npx @11ty/eleventy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will create a blank site in the current directory. To start up the web server, you can run this command: &lt;code&gt;npx @11ty/eleventy --serve&lt;/code&gt;. After that, you can open &lt;code&gt;http://localhost:8080/README/&lt;/code&gt; in your web browser to see your local page. You can edit its contents in a code editing program such as VSCode. Then you&#39;ll want to create a .eleventy.js file so that you can configure Eleventy to your site&#39;s needs. You can edit the files in the directory such as the &lt;a href=&quot;http://readme.md/&quot;&gt;readme.md&lt;/a&gt; and index.html. Here is what my basic site looks like:&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/aiqavveawofjd2br0cr0.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+You can view my GitHub code [here].(&lt;a href=&quot;https://github.com/briangan123/11ty&quot;&gt;https://github.com/briangan123/11ty&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&quot;11ty-blog-template&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;11ty Blog Template&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#11ty-blog-template&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Another way to utilize 11ty is by using prebuilt templates. For this example, I used &lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;this&lt;/a&gt; template from GitHub. To use this as a template, click the green button that says &amp;quot;use this template&amp;quot;. It will prompt you to create a repo name and then you can create your own version. &lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9qe41ss9jvtratdpdhmv.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+After you created your template on GitHub, you can use your command line to keep track of changes so that you can upload it to GitHub. Again, you can edit the contents by changing some files in VSCode. Here is what my blog looks like:&lt;/p&gt;
+&lt;p&gt;Homepage&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3jj5o3n1g6qduhxa48rs.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+Archive page&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n072znuwh3y695apxat7.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+First Blog Post&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ixdtrvn5qwf7sujmwu4j.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+You can push your changes to GitHub to keep track of changes to your files as you add more to your site. Here is my Github &lt;a href=&quot;https://github.com/briangan123/11tyLab&quot;&gt;repo&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;another-template&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Another Template&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#another-template&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Another template I used was &lt;a href=&quot;https://github.com/trey/resume-template&quot;&gt;this&lt;/a&gt;.&lt;br /&gt;
+Following the same procedures to use the template, I created my own resume site and edited the files and page content to fit my needs. Here is what it looks like:&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/otqay0x4z7cfhr9pag0y.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+You can see the edits I made in my GitHub repo &lt;a href=&quot;https://github.com/briangan123/resume11ty&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#conclusion&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;11ty is a powerful tool to create a static site and there are many ways to go about it. Using a template will get you up and running faster, but if you want full customizability, then you can build your site from the ground up.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Getting started with Docker</title>
+		<link href="https://groupb11ty/11tyLab/posts/fourthpost/"/>
+		<updated>2022-02-27T00:00:00Z</updated>
+		<id>https://groupb11ty/11tyLab/posts/fourthpost/</id>
+		<content type="html">&lt;p&gt;Docker is an open source containerization platform where developers can package applications into containers. It is becoming more popular due to organization&#39;s shift to the cloud, simplifying delivery of applications. Containers make it so that applications can be easily deployed, patched, and scaled.You won&#39;t have to install any dependencies because the container will already have everything the application needs to run. Docker provides a single place to set up and manage containers simply and easily.&lt;/p&gt;
+&lt;h2 id=&quot;getting-started-with-play-with-docker&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Getting Started with Play With Docker&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/fourthpost/#getting-started-with-play-with-docker&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;First, you&#39;ll want to head over to the Docker site and create an account. After creating an account, head over to this &lt;a href=&quot;https://labs.play-with-docker.com/&quot;&gt;link&lt;/a&gt; and hit the green start button.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zxfb82nzg7izmznx7qel.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+From here, you can click the &amp;quot;ADD NEW INSTANCE&amp;quot; button on the left hand side to open up the sandbox.&lt;br /&gt;
+Now have a command line on Docker that you can play around with to open containers.&lt;/p&gt;
+&lt;h2 id=&quot;**connecting-this-to-out-nasa-api-project-**&quot; tabindex=&quot;-1&quot;&gt;**Connecting this to out NASA API project ** &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/fourthpost/#**connecting-this-to-out-nasa-api-project-**&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After creating a new instance, we need to clone the GitHub repo and cd into the new directory.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b89eadmqn9c5a9djjo2h.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+Then we need to create a new file in this directory. This can be done with this command: &lt;code&gt;touch &amp;quot;dockerfile&amp;quot;&lt;/code&gt;.&lt;br /&gt;
+Then we can edit this file by clicking the &amp;quot;Editor&amp;quot; button and searching for the new file.&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0xbx9gsk2yrsyt064ypp.png&quot; alt=&quot;Image description&quot; /&gt;&lt;br /&gt;
+In the file, we can paste this code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FROM node:10-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD [&amp;quot;node&amp;quot;, &amp;quot;/app/src/index.js&amp;quot;]
+EXPOSE 3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After adding the contents to this file, you can save it. What this does is automate commands that would need to be run in order to run the site like a script.&lt;/p&gt;
+&lt;p&gt;Now you can run &lt;code&gt;docker build -t todoapp .&lt;/code&gt; (make sure to include the period)&lt;br /&gt;
+Now you can create your containers using the command line. For example: &lt;code&gt;docker run -dp 3000:3000 todoapp&lt;/code&gt;.&lt;br /&gt;
+You can create as many containers as you want as long as you are using different ports. Otherwise, it will be overwritten.&lt;br /&gt;
+Now to open the port, you can click the &amp;quot;Open Port&amp;quot; button and entering in the port number. Or if a button with the port number pops up, you can click that instead.&lt;br /&gt;
+Additionally, you can run &lt;code&gt;docker-compose up&lt;/code&gt; to run an entire app.&lt;br /&gt;
+Congratulations, you have created a dockerfile for your container.&lt;/p&gt;
+&lt;h2 id=&quot;images-from-newsapi-microservice&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Images from NEWSAPI Microservice&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/fourthpost/#images-from-newsapi-microservice&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;This is the frontend of the NewsAPI microservice&lt;/em&gt;&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hxo1pjij42oeti561q8w.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the backend of the NewsAPI microservice&lt;/em&gt;&lt;br /&gt;
+&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lh14xzpeviuci5ckv19a.png&quot; alt=&quot;Image description&quot; /&gt;&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>The back end of connecting to APIs.</title>
@@ -116,31 +190,6 @@ If you are using version control, make sure to commit and push your changes to y
 &lt;p&gt;This is my &lt;a href=&quot;https://github.com/briangan123/edtechjoker-lab1&quot;&gt;GitHub repo&lt;/a&gt; for this project.&lt;/p&gt;
 &lt;p&gt;If you want to practice and learn more about different web components and how to integrate them into your code, I suggest you check out [Lit&#39;s tutorial] (&lt;a href=&quot;https://lit.dev/tutorial/&quot;&gt;https://lit.dev/tutorial/&lt;/a&gt;) and play around with it.&lt;/p&gt;
 &lt;p&gt;Good luck and have fun building!&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>This is my fourth post.</title>
-		<link href="https://groupb11ty/11tyLab/posts/fourthpost/"/>
-		<updated>2018-09-30T00:00:00Z</updated>
-		<id>https://groupb11ty/11tyLab/posts/fourthpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/fourthpost/#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>This is my third post.</title>
-		<link href="https://groupb11ty/11tyLab/posts/thirdpost/"/>
-		<updated>2018-08-24T00:00:00Z</updated>
-		<id>https://groupb11ty/11tyLab/posts/thirdpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;ins class=&quot;highlight-line highlight-line-add&quot;&gt;	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/ins&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;del class=&quot;highlight-line highlight-line-remove&quot;&gt;	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/del&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot; tabindex=&quot;-1&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;https://groupb11ty/11tyLab/posts/thirdpost/#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
